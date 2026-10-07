@@ -1,0 +1,25 @@
+# Installer replaces @BACKEND_USER@ and @BACKEND_HOME@ with verified values.
+[Unit]
+Description=Private Telegram finance subscription worker
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=@BACKEND_HOME@/.config/finanzas-familiares/worker.json
+
+[Service]
+Type=simple
+User=@BACKEND_USER@
+WorkingDirectory=@BACKEND_HOME@/finanzas-familiares/current
+ExecStart=/usr/bin/node @BACKEND_HOME@/finanzas-familiares/current/scripts/subscription-worker.ts --config @BACKEND_HOME@/.config/finanzas-familiares/worker.json
+UMask=0077
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=180
+KillSignal=SIGTERM
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=@BACKEND_HOME@/.config/finanzas-familiares
+
+[Install]
+WantedBy=multi-user.target

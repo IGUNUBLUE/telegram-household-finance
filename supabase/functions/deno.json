@@ -1,0 +1,15 @@
+{
+  "imports": {
+    "ai": "npm:ai@7.0.126",
+    "@ai-sdk/openai": "npm:@ai-sdk/openai@4.0.83",
+    "zod": "npm:zod@4.6.5",
+    "grammy/web": "npm:grammy@1.46.0/web",
+    "grammy/types": "npm:grammy@1.46.0/types"
+  },
+  "compilerOptions": {
+    "types": [
+      "./_shared/edge-runtime.d.ts"
+    ]
+  },
+  "lock": "./deno.lock"
+}

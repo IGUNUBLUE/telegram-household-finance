@@ -1,0 +1,575 @@
+{
+  "description": "Invented financial memories and manually written English equivalents. No production data. Labels fixed before model execution.",
+  "documents": [
+    {
+      "id": "rent",
+      "es": "Pagué 915000 pesos del arriendo de octubre desde la cuenta Principal. Es un gasto familiar de vivienda.",
+      "en": "I paid 915000 pesos for October rent from the Principal account. It is a household housing expense."
+    },
+    {
+      "id": "funding",
+      "es": "Trasladé 915000 pesos del bolsillo Reserva hacia la cuenta Principal para completar el saldo del arriendo.",
+      "en": "I transferred 915000 pesos from the Reserva pocket to the Principal account to fund the rent payment."
+    },
+    {
+      "id": "reverse_transfer",
+      "es": "Moví 915000 pesos de la cuenta Principal al bolsillo Reserva para ahorrar para noviembre.",
+      "en": "I moved 915000 pesos from the Principal account to the Reserva pocket to save for November."
+    },
+    {
+      "id": "groceries",
+      "es": "Compré el mercado de la semana: verduras, huevos y leche, por 186000 pesos en Supermercado Norte. Pagué con débito.",
+      "en": "I bought the week's groceries: vegetables, eggs and milk, for 186000 pesos at Supermercado Norte. I paid with a debit card."
+    },
+    {
+      "id": "meal",
+      "es": "Gasté 42000 pesos en un almuerzo de ejemplo familiar a domicilio.",
+      "en": "I spent 42000 pesos on an example family lunch delivery."
+    },
+    {
+      "id": "coffee",
+      "es": "Me tomé un tinto en la cafetería de la esquina por 3500 pesos. Fue un gasto personal.",
+      "en": "I had a black coffee at the corner cafe for 3500 pesos. It was a personal expense."
+    },
+    {
+      "id": "power",
+      "es": "Pagué la factura de energía de septiembre, 143000 pesos, desde Principal.",
+      "en": "I paid the September electricity bill, 143000 pesos, from Principal."
+    },
+    {
+      "id": "water",
+      "es": "La factura del acueducto y alcantarillado de septiembre costó 67000 pesos y ya quedó pagada.",
+      "en": "The September water and sewer bill cost 67000 pesos and has been paid."
+    },
+    {
+      "id": "internet",
+      "es": "Cancelé 89000 pesos de internet fijo de la casa a Fibra Azul. El servicio incluye wifi para toda la familia.",
+      "en": "I paid 89000 pesos for home broadband to Fibra Azul. The service includes Wi-Fi for the whole family."
+    },
+    {
+      "id": "mobile",
+      "es": "Recargué 15000 pesos de datos móviles para mi celular personal.",
+      "en": "I topped up 15000 pesos of mobile data for my personal phone."
+    },
+    {
+      "id": "salary",
+      "es": "Recibí la nómina de mi empleo, 3200000 pesos, en la cuenta Principal el último día de septiembre.",
+      "en": "I received my employment salary, 3200000 pesos, in the Principal account on the last day of September."
+    },
+    {
+      "id": "freelance",
+      "es": "El cliente Estudio Verde me pagó 750000 pesos por diseñar su página web. Es un ingreso independiente.",
+      "en": "The client Estudio Verde paid me 750000 pesos for designing its website. It is freelance income."
+    },
+    {
+      "id": "card_payment",
+      "es": "Aboné 230000 pesos a la tarjeta de crédito Tarjeta Sol desde Principal. Este abono reduce la deuda y no es una compra nueva.",
+      "en": "I paid 230000 pesos toward the Tarjeta Sol credit card from Principal. This payment reduces debt and is not a new purchase."
+    },
+    {
+      "id": "card_purchase",
+      "es": "Compré unos zapatos de 230000 pesos con la tarjeta de crédito Tarjeta Sol. La compra aumenta la deuda.",
+      "en": "I bought shoes costing 230000 pesos with the Tarjeta Sol credit card. The purchase increases debt."
+    },
+    {
+      "id": "card_opening",
+      "es": "La deuda inicial de Tarjeta Sol era de 812345,67 pesos al empezar el registro. Es un saldo de apertura, no un gasto del mes.",
+      "en": "The opening debt of Tarjeta Sol was 812345.67 pesos when tracking began. It is an opening balance, not a monthly expense."
+    },
+    {
+      "id": "loan_out",
+      "es": "Le presté 120000 pesos a Paula desde Principal. Ella me debe ese dinero y debe devolverlo.",
+      "en": "I lent Paula 120000 pesos from Principal. She owes me that money and must repay it."
+    },
+    {
+      "id": "loan_return",
+      "es": "Paula me devolvió los 120000 pesos que le había prestado. Entraron a Principal como devolución del préstamo.",
+      "en": "Paula repaid the 120000 pesos I had lent her. The money entered Principal as loan repayment."
+    },
+    {
+      "id": "borrowed",
+      "es": "Diego me prestó 300000 pesos para una emergencia. Recibí el dinero, pero tengo una deuda con él.",
+      "en": "Diego lent me 300000 pesos for an emergency. I received the money but owe him a debt."
+    },
+    {
+      "id": "refund",
+      "es": "La tienda me devolvió 96000 pesos por una chaqueta que devolví. Es un reembolso de una compra anulada.",
+      "en": "The shop refunded me 96000 pesos for a jacket I returned. It is a refund for a cancelled purchase."
+    },
+    {
+      "id": "medical",
+      "es": "Compré medicamentos recetados en Farmacia Central por 58000 pesos para el tratamiento de mi hija.",
+      "en": "I bought prescription medicine at Farmacia Central for 58000 pesos for my daughter's treatment."
+    },
+    {
+      "id": "school",
+      "es": "Pagué 210000 pesos de la mensualidad del colegio de mi hija. Categoría educación y alcance familiar.",
+      "en": "I paid 210000 pesos for my daughter's monthly school tuition. Education category and household scope."
+    },
+    {
+      "id": "taxi",
+      "es": "Tomé un taxi de 19000 pesos para ir a la oficina porque estaba lloviendo.",
+      "en": "I took a taxi costing 19000 pesos to get to the office because it was raining."
+    },
+    {
+      "id": "bus",
+      "es": "Recargué la tarjeta del bus por 30000 pesos para mis viajes al trabajo de esta semana.",
+      "en": "I topped up my bus pass with 30000 pesos for this week's commute to work."
+    },
+    {
+      "id": "atm",
+      "es": "Saqué 100000 pesos del cajero: salió de Principal y entró a Efectivo. No fue un gasto.",
+      "en": "I withdrew 100000 pesos from the ATM: it left Principal and entered Cash. It was not an expense."
+    },
+    {
+      "id": "cash_purchase",
+      "es": "Gasté 100000 pesos en un regalo de cumpleaños, pagado en efectivo.",
+      "en": "I spent 100000 pesos on a birthday gift, paid in cash."
+    },
+    {
+      "id": "subscription",
+      "es": "La suscripción de películas de Cine Nube se renovó por 27000 pesos este mes.",
+      "en": "The Cine Nube movie streaming subscription renewed for 27000 pesos this month."
+    },
+    {
+      "id": "insurance",
+      "es": "Pagué 47000 pesos de la póliza del seguro de vida. Es una protección familiar.",
+      "en": "I paid 47000 pesos for the life insurance policy. It is household protection."
+    },
+    {
+      "id": "pet",
+      "es": "Compré concentrado para el gato por 39000 pesos en Mascotas Centro.",
+      "en": "I bought cat food for 39000 pesos at Mascotas Centro."
+    },
+    {
+      "id": "pending_rent",
+      "es": "Quedó pendiente confirmar si el arriendo de noviembre es familiar o personal. El valor ya se conoce: 920000 pesos.",
+      "en": "It remains pending to confirm whether November rent is household or personal. The amount is already known: 920000 pesos."
+    },
+    {
+      "id": "pending_transfer",
+      "es": "Está pendiente indicar el valor del traslado entre Reserva y Principal. Las cuentas están claras, falta solamente el monto.",
+      "en": "The amount of the transfer between Reserva and Principal is pending. The accounts are clear; only the amount is missing."
+    },
+    {
+      "id": "account_alias",
+      "es": "La cuenta llamada Principal también se puede llamar cuenta uno o la principal. El bolsillo Reserva es otra cuenta distinta.",
+      "en": "The account named Principal can also be called account one or the main account. The Reserva pocket is a separate account."
+    },
+    {
+      "id": "preference",
+      "es": "Cuando compre en Supermercado Norte, normalmente el gasto es familiar y se paga desde Principal. Debo confirmar si el caso cambia.",
+      "en": "When I shop at Supermercado Norte, the expense is normally household and paid from Principal. I must confirm if a case differs."
+    },
+    {
+      "id": "correction",
+      "es": "Corregí la cena del viernes: el valor correcto fue 38000 pesos, no 83000. Se anuló el registro anterior antes de reemplazarlo.",
+      "en": "I corrected Friday dinner: the correct amount was 38000 pesos, not 83000. The previous record was reversed before replacement."
+    },
+    {
+      "id": "electric_budget",
+      "es": "El presupuesto mensual de energía es 160000 pesos. Se avisa cuando el consumo llega al ochenta por ciento.",
+      "en": "The monthly electricity budget is 160000 pesos. Notify when spending reaches eighty percent."
+    },
+    {
+      "id": "savings_goal",
+      "es": "La meta del bolsillo Viaje es ahorrar 2400000 pesos para vacaciones en diciembre.",
+      "en": "The Viaje pocket goal is to save 2400000 pesos for a December vacation."
+    },
+    {
+      "id": "interest",
+      "es": "La cuenta de ahorros produjo 8200 pesos de intereses este mes. Es un ingreso financiero, no una transferencia.",
+      "en": "The savings account earned 8200 pesos in interest this month. It is financial income, not a transfer."
+    }
+  ],
+  "queries": [
+    {
+      "id": "q01",
+      "group": "ordinary",
+      "es": "¿Cuánto pagué por el alquiler de octubre?",
+      "en": "How much did I pay for October rent?",
+      "relevant": [
+        "rent"
+      ]
+    },
+    {
+      "id": "q02",
+      "group": "ordinary",
+      "es": "¿Cómo completé la plata para pagar el arriendo?",
+      "en": "How did I fund the rent payment?",
+      "relevant": [
+        "funding"
+      ]
+    },
+    {
+      "id": "q03",
+      "group": "ordinary",
+      "es": "¿Cuánto salió hacer mercado esta semana?",
+      "en": "How much did this week's grocery shopping cost?",
+      "relevant": [
+        "groceries"
+      ]
+    },
+    {
+      "id": "q04",
+      "group": "ordinary",
+      "es": "¿Cuánto costó el almuerzo familiar a domicilio?",
+      "en": "How much did the family lunch delivery cost?",
+      "relevant": [
+        "meal"
+      ]
+    },
+    {
+      "id": "q05",
+      "group": "ordinary",
+      "es": "¿Qué gasté en el cafecito de la esquina?",
+      "en": "What did I spend on coffee at the corner cafe?",
+      "relevant": [
+        "coffee"
+      ]
+    },
+    {
+      "id": "q06",
+      "group": "ordinary",
+      "es": "¿Ya pagué el recibo de la luz de septiembre?",
+      "en": "Did I pay the September electricity bill?",
+      "relevant": [
+        "power"
+      ]
+    },
+    {
+      "id": "q07",
+      "group": "ordinary",
+      "es": "Busca el pago del agua y alcantarillado.",
+      "en": "Find the water and sewer payment.",
+      "relevant": [
+        "water"
+      ]
+    },
+    {
+      "id": "q08",
+      "group": "ordinary",
+      "es": "¿Cuánto cuesta el wifi de la casa?",
+      "en": "How much does the home Wi-Fi cost?",
+      "relevant": [
+        "internet"
+      ]
+    },
+    {
+      "id": "q09",
+      "group": "ordinary",
+      "es": "¿Cuánto metí de datos al celular?",
+      "en": "How much did I top up the phone's mobile data?",
+      "relevant": [
+        "mobile"
+      ]
+    },
+    {
+      "id": "q10",
+      "group": "ordinary",
+      "es": "¿Cuándo entró el sueldo del trabajo?",
+      "en": "When did my employment salary arrive?",
+      "relevant": [
+        "salary"
+      ]
+    },
+    {
+      "id": "q11",
+      "group": "ordinary",
+      "es": "Encuentra el ingreso por la web de Estudio Verde.",
+      "en": "Find the income from Estudio Verde's website.",
+      "relevant": [
+        "freelance"
+      ]
+    },
+    {
+      "id": "q12",
+      "group": "ordinary",
+      "es": "¿Cuál era la deuda al comenzar a llevar las cuentas?",
+      "en": "What was the debt when I started tracking accounts?",
+      "relevant": [
+        "card_opening"
+      ]
+    },
+    {
+      "id": "q13",
+      "group": "ordinary",
+      "es": "¿Qué compré en la farmacia para mi hija?",
+      "en": "What did I buy at the pharmacy for my daughter?",
+      "relevant": [
+        "medical"
+      ]
+    },
+    {
+      "id": "q14",
+      "group": "ordinary",
+      "es": "Busca la pensión del colegio de la niña.",
+      "en": "Find my daughter's school tuition payment.",
+      "relevant": [
+        "school"
+      ]
+    },
+    {
+      "id": "q15",
+      "group": "ordinary",
+      "es": "¿Cuánto me costó el taxi cuando llovió?",
+      "en": "How much did the taxi cost when it rained?",
+      "relevant": [
+        "taxi"
+      ]
+    },
+    {
+      "id": "q16",
+      "group": "ordinary",
+      "es": "¿Cuánto recargué para ir en bus al trabajo?",
+      "en": "How much did I top up for commuting to work by bus?",
+      "relevant": [
+        "bus"
+      ]
+    },
+    {
+      "id": "q17",
+      "group": "ordinary",
+      "es": "¿Cuánto cobra la plataforma de películas?",
+      "en": "How much does the movie streaming service charge?",
+      "relevant": [
+        "subscription"
+      ]
+    },
+    {
+      "id": "q18",
+      "group": "ordinary",
+      "es": "Encuentra la póliza que protege a la familia si fallezco.",
+      "en": "Find the policy that protects my family if I die.",
+      "relevant": [
+        "insurance"
+      ]
+    },
+    {
+      "id": "q19",
+      "group": "ordinary",
+      "es": "¿Cuánto gasté en comida para el michi?",
+      "en": "How much did I spend on food for the kitty?",
+      "relevant": [
+        "pet"
+      ]
+    },
+    {
+      "id": "q20",
+      "group": "ordinary",
+      "es": "¿Qué falta aclarar del arriendo de noviembre?",
+      "en": "What remains to clarify about November rent?",
+      "relevant": [
+        "pending_rent"
+      ]
+    },
+    {
+      "id": "q21",
+      "group": "ordinary",
+      "es": "¿Qué dato falta del traslado pendiente?",
+      "en": "What information is missing from the pending transfer?",
+      "relevant": [
+        "pending_transfer"
+      ]
+    },
+    {
+      "id": "q22",
+      "group": "ordinary",
+      "es": "¿La cuenta uno es la misma que Principal?",
+      "en": "Is account one the same as Principal?",
+      "relevant": [
+        "account_alias"
+      ]
+    },
+    {
+      "id": "q23",
+      "group": "ordinary",
+      "es": "¿Desde dónde suelo pagar en Supermercado Norte?",
+      "en": "Which account do I normally use to pay at Supermercado Norte?",
+      "relevant": [
+        "preference"
+      ]
+    },
+    {
+      "id": "q24",
+      "group": "ordinary",
+      "es": "¿En cuánto quedó la cena que corregimos el viernes?",
+      "en": "What was the final amount of the dinner we corrected on Friday?",
+      "relevant": [
+        "correction"
+      ]
+    },
+    {
+      "id": "q25",
+      "group": "ordinary",
+      "es": "¿Qué límite mensual pusimos para electricidad?",
+      "en": "What monthly electricity budget did we set?",
+      "relevant": [
+        "electric_budget"
+      ]
+    },
+    {
+      "id": "q26",
+      "group": "ordinary",
+      "es": "¿Para qué estoy guardando dinero en Viaje?",
+      "en": "What am I saving money for in Viaje?",
+      "relevant": [
+        "savings_goal"
+      ]
+    },
+    {
+      "id": "q27",
+      "group": "ordinary",
+      "es": "¿Cuánto me rindió la cuenta de ahorros este mes?",
+      "en": "How much interest did my savings account earn this month?",
+      "relevant": [
+        "interest"
+      ]
+    },
+    {
+      "id": "q28",
+      "group": "ordinary",
+      "es": "¿Qué compra me reembolsó la tienda?",
+      "en": "Which purchase did the shop refund?",
+      "relevant": [
+        "refund"
+      ]
+    },
+    {
+      "id": "q29",
+      "group": "contrast",
+      "es": "Busca el traslado que salió de Reserva y llegó a Principal.",
+      "en": "Find the transfer that left Reserva and arrived in Principal.",
+      "relevant": [
+        "funding"
+      ]
+    },
+    {
+      "id": "q30",
+      "group": "contrast",
+      "es": "Busca el traslado que salió de Principal y llegó a Reserva.",
+      "en": "Find the transfer that left Principal and arrived in Reserva.",
+      "relevant": [
+        "reverse_transfer"
+      ]
+    },
+    {
+      "id": "q31",
+      "group": "contrast",
+      "es": "Los 915000 que se gastaron en vivienda, no el traslado entre mis cuentas.",
+      "en": "The 915000 spent on housing, not the transfer between my accounts.",
+      "relevant": [
+        "rent"
+      ]
+    },
+    {
+      "id": "q32",
+      "group": "contrast",
+      "es": "El abono de 230000 que redujo lo que debo a Tarjeta Sol.",
+      "en": "The 230000 payment that reduced what I owe on Tarjeta Sol.",
+      "relevant": [
+        "card_payment"
+      ]
+    },
+    {
+      "id": "q33",
+      "group": "contrast",
+      "es": "La compra de 230000 que aumentó lo que debo a Tarjeta Sol.",
+      "en": "The 230000 purchase that increased what I owe on Tarjeta Sol.",
+      "relevant": [
+        "card_purchase"
+      ]
+    },
+    {
+      "id": "q34",
+      "group": "contrast",
+      "es": "Busca cuando yo le entregué plata prestada a Paula.",
+      "en": "Find when I lent money to Paula.",
+      "relevant": [
+        "loan_out"
+      ]
+    },
+    {
+      "id": "q35",
+      "group": "contrast",
+      "es": "Busca cuando Paula me regresó la plata que me debía.",
+      "en": "Find when Paula returned the money she owed me.",
+      "relevant": [
+        "loan_return"
+      ]
+    },
+    {
+      "id": "q36",
+      "group": "contrast",
+      "es": "¿A quién le debo el dinero de la emergencia?",
+      "en": "Who do I owe for the emergency money?",
+      "relevant": [
+        "borrowed"
+      ]
+    },
+    {
+      "id": "q37",
+      "group": "contrast",
+      "es": "Los cien mil que retiré, pero que todavía son mi dinero en efectivo.",
+      "en": "The hundred thousand I withdrew that is still my money in cash.",
+      "relevant": [
+        "atm"
+      ]
+    },
+    {
+      "id": "q38",
+      "group": "contrast",
+      "es": "Los cien mil que gasté pagando un obsequio con billetes.",
+      "en": "The hundred thousand I spent paying for a gift with cash.",
+      "relevant": [
+        "cash_purchase"
+      ]
+    },
+    {
+      "id": "q39",
+      "group": "contrast",
+      "es": "Busca el saldo inicial de la tarjeta con los centavos incluidos.",
+      "en": "Find the card's opening balance including the cents.",
+      "relevant": [
+        "card_opening"
+      ]
+    },
+    {
+      "id": "q40",
+      "group": "contrast",
+      "es": "La cena costó treinta y ocho mil, no ochenta y tres mil. ¿Cuál fue la corrección?",
+      "en": "Dinner cost thirty-eight thousand, not eighty-three thousand. What was the correction?",
+      "relevant": [
+        "correction"
+      ]
+    },
+    {
+      "id": "n01",
+      "group": "no_answer",
+      "es": "¿Cuánto pagué por reparar la moto?",
+      "en": "How much did I pay to repair the motorbike?",
+      "relevant": []
+    },
+    {
+      "id": "n02",
+      "group": "no_answer",
+      "es": "Busca el impuesto predial de mi apartamento.",
+      "en": "Find my apartment's property tax.",
+      "relevant": []
+    },
+    {
+      "id": "n03",
+      "group": "no_answer",
+      "es": "¿Quién me pagó por vender la bicicleta?",
+      "en": "Who paid me for selling the bicycle?",
+      "relevant": []
+    },
+    {
+      "id": "n04",
+      "group": "no_answer",
+      "es": "¿Cuánto gasté en el hotel de Cartagena?",
+      "en": "How much did I spend on the Cartagena hotel?",
+      "relevant": []
+    }
+  ]
+}

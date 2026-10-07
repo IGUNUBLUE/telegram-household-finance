@@ -1,0 +1,1 @@
+{"compilerOptions":{"target":"ES2022","module":"NodeNext","moduleResolution":"NodeNext","allowImportingTsExtensions":true,"strict":true,"noEmit":true,"lib":["ES2023","DOM"],"types":["node"],"skipLibCheck":true},"include":["supabase/functions/**/*.ts","tests/**/*.ts","types.d.ts","scripts/**/*.ts"]}

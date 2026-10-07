@@ -1,0 +1,9 @@
+/** Synthetic conversation cases for provider evaluation; never write these to the household ledger. */
+export const evalCases:Record<string,{text:string;context:any;expectation:string}>={
+ debt_clarification:{text:'No se, a que te refieres con saldo pendiente, hablas del cupo max?',context:{conversation:{mode:{kind:'account_balance',draft:{name:'Tarjeta Alfa',kind:'liability',owner:'101'}},turns:[{text:'Tengo una tc de Tarjeta Alfa',answer:'¿Cuánto debes hoy?'}]}},expectation:'Answer debt versus limit; no account proposal or draft mutation.'},
+ missing_account:{text:'Gasté 63000 en almuerzo de ejemplo, pagué con Banco Alfa hoy',context:{accounts:[]},expectation:'Persist incomplete expense before asking about missing Banco Alfa; no ledger posting or invented scope.'},
+ resume:{text:'Fue para los dos, familiar',context:{drafts:[{id:'8',actor:'101',revision:1,state:'pending',fields:{kind:'expense',amount_cop:'63000',account:'Banco Alfa',payer:'101',date:'2026-09-28',category:'Comida',memo:'almuerzo de ejemplo'}}]},expectation:'Update existing draft scope and register exactly 6300000 cents; no new draft/account.'},
+ interrupt:{text:'Antes, ¿qué significa saldo inicial?',context:{drafts:[{id:'8',actor:'101',revision:1,state:'pending',fields:{kind:'expense',amount_cop:'63000',account:'Banco Alfa',memo:'almuerzo de ejemplo'}}]},expectation:'Explain without changing draft or ledger.'},
+ correction:{text:'Ese gasto no fue de 63000 sino de 65000, corrígelo',context:{reply_result:{transaction_id:7},recent:[{id:7,kind:'expense',memo:'almuerzo de ejemplo'}]},expectation:'Prepare amount correction of transaction 7; no new expense.'},
+ card:{text:'Hoy pagué 200000 de la tarjeta Tarjeta Alfa desde Banco Alfa; fue familiar',context:{accounts:[{name:'Banco Alfa',kind:'asset',owner:'101'},{name:'Tarjeta Alfa',kind:'liability',owner:'101'}]},expectation:'Save and submit transfer from Banco Alfa to Tarjeta Alfa, not expense.'}
+};

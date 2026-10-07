@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily Flue SQLite backup
+
+[Timer]
+OnCalendar=*-*-* 03:00:00 America/Bogota
+RandomizedDelaySec=10m
+Persistent=true
+Unit=finanzas-flue-backup.service
+
+[Install]
+WantedBy=timers.target

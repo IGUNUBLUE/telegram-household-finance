@@ -1,0 +1,9 @@
+[functions.telegram]
+verify_jwt = false
+
+[functions.worker]
+verify_jwt = false
+
+# Internal endpoint authenticates with WORKER_SECRET.
+[functions.memory]
+verify_jwt = false
