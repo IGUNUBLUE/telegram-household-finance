@@ -23,10 +23,15 @@ You need Node.js 24, a Linux VPS with persistent disk, a Supabase project, a Tel
 
 Follow the complete [installation guide](docs/install.en.md). Do not start with the historical Edge deployment commands.
 
+## Install with an AI agent
+
+Copy the [agent setup prompt](docs/agent-setup.en.md) into an agent with terminal and SSH tools. It follows the installation guide, performs checks and reports blockers. You provide your own resources and complete private sign-ins/OAuth; a chat without execution tools cannot install the bot.
+
 ## Documentation
 
 | Topic | English | Español |
 | --- | --- | --- |
+| AI-agent installation prompt | [Copy prompt](docs/agent-setup.en.md) | [Copiar prompt](docs/agent-setup.es.md) |
 | Installation and configuration | [Install](docs/install.en.md) | [Instalación](docs/install.es.md) |
 | Conversation examples and commands | [Usage](docs/usage.en.md) | [Uso](docs/usage.es.md) |
 | Components, permissions and embeddings | [Architecture](docs/architecture.en.md) | [Arquitectura](docs/architecture.es.md) |

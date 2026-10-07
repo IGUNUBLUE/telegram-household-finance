@@ -4,6 +4,8 @@
 
 This guide installs a **new, empty household** using the VPS/SQLite runtime. Do not use it to replace an existing household without a separate migration and backup plan. Nothing in the repository contains working credentials or preloaded accounts.
 
+Prefer an agent to execute these steps? Copy the [AI-agent installation prompt](agent-setup.en.md). It uses this guide and reports the checks completed and any manual authorization still needed.
+
 ## 1. Prepare the host
 
 Use a Linux VPS with systemd, a persistent private disk, Git and Node.js 24 installed at `/usr/bin/node`. Check `node --version` and `command -v node`; adjust the unit templates if your executable has another path. CPU inference and initial model downloads need available memory and disk. A starting allocation of 2 vCPU and 4 GiB RAM is a planning recommendation, not a measured minimum or a latency guarantee.

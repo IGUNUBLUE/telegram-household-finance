@@ -4,6 +4,8 @@
 
 Esta guía instala **un hogar nuevo y vacío** con el runtime VPS/SQLite. No la uses para reemplazar un hogar existente sin un plan separado de migración y respaldo. El repositorio no contiene credenciales funcionales ni cuentas precargadas.
 
+¿Prefieres que un agente ejecute estos pasos? Copia el [prompt de instalación para IA](agent-setup.es.md). Usa esta guía e informa las comprobaciones completadas y las autorizaciones manuales pendientes.
+
 ## 1. Preparar el servidor
 
 Usa un VPS Linux con systemd, disco privado persistente, Git y Node.js 24 en `/usr/bin/node`. Verifica `node --version` y `command -v node`; adapta las unidades si el ejecutable está en otra ruta. La inferencia en CPU y la descarga inicial requieren memoria y disco disponibles. Empezar con 2 vCPU y 4 GiB RAM es una recomendación de planificación, no un mínimo medido ni una garantía de latencia.
