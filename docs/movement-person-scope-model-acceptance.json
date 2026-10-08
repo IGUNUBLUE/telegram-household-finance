@@ -1,0 +1,167 @@
+{
+  "suite": "movement_person_scope",
+  "synthetic_only": true,
+  "prompt": "finance-harness-18",
+  "cases": 16,
+  "passed": 16,
+  "results": [
+    {
+      "name": "own latest registered original wording",
+      "passed": true,
+      "elapsed_ms": 7316,
+      "rounds": 2,
+      "answer": "Tu última entrada registrada fue:\n\n$111,11 de arriendo ficticio Sam\nFecha: 6 de octubre de 2026\nCuenta: Cuenta Dos\nCategoría: Prueba",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "own latest recorded paraphrase",
+      "passed": true,
+      "elapsed_ms": 8790,
+      "rounds": 2,
+      "answer": "El último ingreso que anotaste fue “Arriendo ficticio Sam”, por $111,11, con fecha del 6 de octubre de 2026.",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "own received income differs from author",
+      "passed": true,
+      "elapsed_ms": 14120,
+      "rounds": 2,
+      "answer": "Tu último ingreso recibido fue el 8 de octubre de 2026:\n\n$333,33 — “Recibido por Sam registrado por Alex”\nCategoría: Prueba\nRecibido en: Cuenta Uno\n\nHay 2 ingresos recibidos registrados en total.",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "own paid expense differs from author",
+      "passed": true,
+      "elapsed_ms": 9590,
+      "rounds": 2,
+      "answer": "Tu último gasto pagado por ti fue:\n\n$444,44 — “Gasto pagado por Sam registrado por Alex”\nFecha: 8 de octubre de 2026\nCuenta: Cuenta Dos\nCategoría: Prueba\nAlcance: Familiar",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "no own authored expense avoids household fallback",
+      "passed": true,
+      "elapsed_ms": 11000,
+      "rounds": 2,
+      "answer": "No tienes gastos registrados por ti.",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "own managed account movements differ from recipient",
+      "passed": true,
+      "elapsed_ms": 7110,
+      "rounds": 2,
+      "answer": "El último ingreso de una cuenta que administras fue:\n\n$111,11 por “Arriendo ficticio Sam”\nFecha: 6 de octubre de 2026\nCuenta: Cuenta Dos",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "named other member author",
+      "passed": true,
+      "elapsed_ms": 7811,
+      "rounds": 2,
+      "answer": "El último ingreso registrado por Sam es:\n\n$111,11, con fecha del 6 de octubre de 2026\nConcepto: Arriendo ficticio Sam\nCuenta: Cuenta Dos\nAlcance: familiar",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "named other member recipient",
+      "passed": true,
+      "elapsed_ms": 9584,
+      "rounds": 2,
+      "answer": "El último ingreso recibido por Sam fue de $333,33 el 8 de octubre de 2026, con el concepto “Recibido por Sam registrado por Alex”. Se registró en Cuenta Uno.",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "explicit global financial date",
+      "passed": true,
+      "elapsed_ms": 7107,
+      "rounds": 2,
+      "answer": "El ingreso más reciente de todo el hogar fue:\n\n$333,33 el 8 de octubre de 2026\nConcepto: Recibido por Sam\nLo registró: Alex\nLo recibió: Sam\nCuenta: Cuenta Uno\nCategoría: Prueba",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "explicit global last registration",
+      "passed": true,
+      "elapsed_ms": 10479,
+      "rounds": 2,
+      "answer": "El último ingreso registrado entre los dos es:\n\n$555,55 — “Registro reciente con fecha anterior”\nFecha del ingreso: 5 de octubre de 2026\nRegistrado por: Alex\nRecibido por: Alex\nCuenta: Cuenta Uno",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "global to own context",
+      "passed": true,
+      "elapsed_ms": 8520,
+      "rounds": 2,
+      "answer": "Tu último ingreso registrado por ti fue:\n\n$111,11 por “Arriendo ficticio Sam”, con fecha del 6 de octubre, recibido en Cuenta Dos.",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "own to global context",
+      "passed": true,
+      "elapsed_ms": 9962,
+      "rounds": 2,
+      "answer": "El último ingreso registrado de todos es:\n\n$555,55 — “Registro reciente con fecha anterior”\n• Fecha del ingreso: 5 de octubre de 2026\n• Registrado: 8 de octubre de 2026\n• Recibido por: Alex\n• Cuenta: Cuenta Uno",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "named member correction keeps author relation",
+      "passed": true,
+      "elapsed_ms": 9277,
+      "rounds": 2,
+      "answer": "La última entrada de Sam que quedó registrada fue:\n\n$111,11 de “Arriendo ficticio Sam”, con fecha del 6 de octubre de 2026, en Cuenta Dos.",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "own income total over a period",
+      "passed": true,
+      "elapsed_ms": 9964,
+      "rounds": 2,
+      "answer": "Entre el 6 y el 8 de octubre recibiste $444,44 en ingresos:\n\n• 6 de octubre: $111,11 — “Arriendo ficticio Sam”\n• 8 de octubre: $333,33 — “Recibido por Sam registrado por Alex”\n\nTotal: $444,44.",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "own historical list includes family records",
+      "passed": true,
+      "elapsed_ms": 9220,
+      "rounds": 2,
+      "answer": "Ingresos registrados por ti en octubre de 2026, incluyendo los familiares:\n\n• 6 de octubre: Arriendo ficticio Sam — $111,11 COP\n  Cuenta: Cuenta Dos\n  Alcance: familiar\n\nTotal: $111,11 COP.",
+      "tools": [
+        "buscar_movimientos"
+      ]
+    },
+    {
+      "name": "ambiguous own movements asks relationship",
+      "passed": true,
+      "elapsed_ms": 6357,
+      "rounds": 1,
+      "answer": "¿Quieres ver los movimientos que tú registraste, los ingresos que recibiste y gastos que pagaste, o los de tus cuentas?",
+      "tools": []
+    }
+  ]
+}

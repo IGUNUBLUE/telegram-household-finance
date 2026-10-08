@@ -75,7 +75,7 @@ sudo systemctl start finanzas-flue-worker.service finanzas-flue-backup.timer
 
 ## Actualizaciones
 
-Conserva una versión probada y su lockfile para reversión. Detén el worker, crea un respaldo verificado, revisa código/esquema, instala dependencias y ejecuta pruebas/typecheck antes de reiniciar. Aplica migraciones requeridas en orden al proyecto correcto. Mantén el estado fuera de los releases. No vuelvas a código incompatible con el esquema ni cambies al ejecutor Edge histórico sin un relevo coordinado.
+Conserva una versión probada y su lockfile para reversión. Detén el worker, crea un respaldo verificado, revisa código/esquema, instala dependencias y ejecuta pruebas/typecheck antes de reiniciar. Aplica migraciones requeridas en orden al proyecto correcto. Mantén el estado fuera de los releases. No vuelvas a código incompatible con el esquema ni cambies al ejecutor Edge histórico sin un relevo coordinado. Prepara cada candidato en un checkout nuevo con su propio directorio de dependencias. Si una copia hereda un enlace node_modules, retira solo el enlace del candidato antes de instalar; no ejecutes npm ci mediante un enlace compartido con una versión activa o de reversión.
 
 ## Diagnóstico
 

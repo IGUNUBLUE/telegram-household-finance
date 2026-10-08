@@ -38,6 +38,7 @@ Copia el [prompt de instalación](docs/agent-setup.es.md) en un agente con termi
 | Servicios, copias, recuperación y diagnóstico | [Operación](docs/operations.es.md) | [Operations](docs/operations.en.md) |
 | Desarrollo, pruebas y lista de publicación | [Desarrollo](docs/development.es.md) | [Development](docs/development.en.md) |
 | Verificación del snapshot inicial | [Verificación](docs/release-check.es.md) | [Checks](docs/release-check.en.md) |
+| Verificación de consultas por persona | [Verificación](docs/movement-person-scope-check.es.md) | [Checks](docs/movement-person-scope-check.en.md) |
 
 Las identidades, cuentas y datos financieros usados en ejemplos y pruebas son ficticios. Esta edición no contiene bases de datos operativas, conversaciones archivadas, archivos de credenciales ni historial Git privado anterior.
 

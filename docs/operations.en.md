@@ -75,7 +75,7 @@ sudo systemctl start finanzas-flue-worker.service finanzas-flue-backup.timer
 
 ## Updates
 
-Keep a tested release and its lockfile available for rollback. Stop the worker, create a verified backup, review code/schema changes, install dependencies for the new revision and run tests/typecheck before restarting. Apply required migrations in order to the intended project. Keep state outside releases. Do not downgrade code against an incompatible schema or swap to the historical Edge executor without a coordinated handoff.
+Keep a tested release and its lockfile available for rollback. Prepare each candidate in a fresh checkout with its own dependency directory. If a copied candidate inherits a node_modules symlink, remove only that candidate link before installing; do not run npm ci through a link shared with an active or rollback release. Stop the worker, create a verified backup, review code/schema changes, install dependencies for the new revision and run tests/typecheck before restarting. Apply required migrations in order to the intended project. Keep state outside releases. Do not downgrade code against an incompatible schema or swap to the historical Edge executor without a coordinated handoff.
 
 ## Troubleshooting
 

@@ -39,6 +39,19 @@ Para un movimiento ya registrado, indica su ID y los datos correctos: `Corrige e
 
 Los saldos reflejan el libro, no una conexión bancaria en vivo. Los saldos iniciales desconocidos/no verificados conservan esa indicación. El alcance personal/familiar atribuye el movimiento; no oculta los mensajes al otro miembro del grupo.
 
+## Consultas de una persona
+
+| Solicitud | Relación usada |
+| --- | --- |
+| `Dame la última entrada que realicé` | Último registro cuyo autor es quien escribe |
+| `Dame el último ingreso que recibí` | Último ingreso recibido por quien escribe, por fecha financiera |
+| `Muéstrame los gastos que pagué` | Quien escribe como pagador interno |
+| `Movimientos de las cuentas que administro` | Quien escribe como administrador de una cuenta afectada |
+| `Último ingreso registrado por Sam` | Miembro ficticio explícito como autor |
+| `Último ingreso registrado de todo el hogar` | Ambos miembros, por momento de registro |
+
+El autor, el pagador/receptor interno y el administrador de la cuenta pueden ser diferentes. Familiar/personal es un filtro independiente: un ingreso familiar puede corresponder a una sola persona. SQL filtra por la relación solicitada antes de elegir el último registro o calcular totales de un periodo. “Último registrado” usa el momento de registro; “más reciente por fecha” usa la fecha financiera y desempata con IDs numéricos. Una corrección como `Solo de Sam` conserva el tipo y la relación solicitados, cambiando la persona. `Mis movimientos` puede requerir una aclaración breve si admite varias interpretaciones. Una consulta propia vacía no se completa con registros de la pareja. El hogar sigue siendo consultable; esto no es un límite de privacidad.
+
 ## Confirmaciones de administradores
 
 El aviso del grupo identifica al administrador afectado y resume importe, cuentas y operación exacta. El responsable puede usar los botones Confirmar/Rechazar o una confirmación textual inequívoca de esa solicitud. El “sí” de otra persona no reemplaza su aprobación.
