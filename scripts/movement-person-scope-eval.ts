@@ -51,7 +51,7 @@ try{
   const context={...await f.rpc('worker:context',{id:ev.id}),actor:c.actor,event_id:ev.id,event_attempt_token:lease.turn_token,turn_focus:{draft_ids:[]},conversation:c.conversation??await f.rpc('pro:conversation',{id:ev.id,text:c.text,force_new:true})};
   const reads:any[]=[],before=await f.snapshotLedger();const checked=createFlueInterpretationServices({runtime,today:()=>date,telegramFile:async()=>{throw Error('No Telegram');},rpc:async(op,data,signal)=>{const r=await f.rpc(op,data);if(op==='agent:search')reads.push({args:data,result:r});return r;}});
   const action=await checked.interpret({text:c.text},context,m=>{metrics=m;});assert.equal(action.type,'clarify');
-  if('ambiguous' in c){assert.ok(action.question.includes('?'));assert.ok(reads.every(r=>r.result.person_filter.scope==='mine'));assert.match(action.question,/registr|recib|pag|administr|cuenta|autor/i);}
+  if('ambiguous' in c){assert.ok(action.question.includes('?'));assert.doesNotMatch(action.question,/\d|\bCuenta (?:Uno|Dos)\b/,'An ambiguous relationship must not attribute financial facts before clarification');assert.match(action.question,/registr|recib|pag|administr|cuenta|autor/i);}
   else{
    assert.ok(reads.length,'Expected a verified movement query');
    const read=reads.at(-1),filter=read.result.person_filter;

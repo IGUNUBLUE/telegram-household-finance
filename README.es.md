@@ -39,6 +39,7 @@ Copia el [prompt de instalación](docs/agent-setup.es.md) en un agente con termi
 | Desarrollo, pruebas y lista de publicación | [Desarrollo](docs/development.es.md) | [Development](docs/development.en.md) |
 | Verificación del snapshot inicial | [Verificación](docs/release-check.es.md) | [Checks](docs/release-check.en.md) |
 | Verificación de consultas por persona | [Verificación](docs/movement-person-scope-check.es.md) | [Checks](docs/movement-person-scope-check.en.md) |
+| Verificación del modelo Luna 6 | [Verificación](docs/model-luna6-check.es.md) | [Checks](docs/model-luna6-check.en.md) |
 
 Las identidades, cuentas y datos financieros usados en ejemplos y pruebas son ficticios. Esta edición no contiene bases de datos operativas, conversaciones archivadas, archivos de credenciales ni historial Git privado anterior.
 

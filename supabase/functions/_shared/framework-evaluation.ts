@@ -39,6 +39,16 @@ export async function evaluateFramework(name:string,model:ReturnType<typeof crea
    if(data.amount_cop!=='190000'||data.from_account!=='Banco Beta'||data.to_account!=='Banco Alfa'||data.from||data.to||data.query)throw Error('Filtros de búsqueda incorrectos');
    return {status:'movement_search',exists:name==='transfer_present',total_matches:name==='transfer_present'?1:0,complete:true,movements:name==='transfer_present'?[{id:'9',kind:'transfer',date:'2026-09-10',amount_cop:'190000.00',from_account:'Banco Beta',to_account:'Banco Alfa',memo:'Transferencia'}]:[]};
   }
+  if(op==='agent:drafts_save'){
+   const drafts=data.items.map((item:any)=>{
+    let stored=context.drafts.find((d:any)=>String(d.id)===String(item.draft_id));
+    if(item.draft_id&&!stored)throw Error('Synthetic draft missing');
+    if(stored){if(stored.revision!==item.revision)throw Error('Synthetic draft version changed');stored.fields={...stored.fields,...item.fields};stored.revision++;}
+    else{stored={id:String(9+context.drafts.length),actor:context.actor,revision:1,state:'pending',fields:structuredClone(item.fields)};context.drafts.push(stored);}
+    return structuredClone(stored);
+   });
+   return {drafts};
+  }
   if(op==='agent:draft_get')return {draft:context.drafts.find((d:any)=>String(d.id)===String(data.draft_id))};
   if(op==='agent:draft_save'){
    if(name==='transfer_received'&&!data.draft_id){const draft={id:'9',actor:'101',revision:1,state:'pending',fields:data.fields};context.drafts.push(draft);return {draft:structuredClone(draft)};}

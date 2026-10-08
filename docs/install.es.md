@@ -101,7 +101,7 @@ Conserva directorio `0700`, archivo `0600` y propietario igual al usuario ejecut
 
 ## 6. Autorizar y probar la cuenta de inferencia
 
-El adaptador usa una sesión OAuth propia. Tener una suscripción de ChatGPT no garantiza acceso a este cliente experimental ni al modelo requerido. El runtime requiere actualmente `gpt-5.6-luna`; su catálogo debe aceptarlo. Detente si falla la autorización, el catálogo o las pruebas sintéticas. Cambiar de proveedor requiere código y pruebas, no editar solamente `worker.json`.
+El adaptador usa una sesión OAuth propia. Tener una suscripción de ChatGPT no garantiza acceso a este cliente experimental ni al modelo requerido. El runtime requiere actualmente `gpt-6-luna`; su catálogo debe aceptarlo. Detente si falla la autorización, el catálogo o las pruebas sintéticas. Cambiar de proveedor requiere código y pruebas, no editar solamente `worker.json`.
 
 En un VPS sin navegador, abre este túnel **desde tu equipo** y mantenlo activo:
 
@@ -112,7 +112,7 @@ ssh -L 8765:127.0.0.1:8765 finance@YOUR_SERVER
 Después, **en el VPS con el usuario dedicado**:
 
 ```sh
-npm run subscription:connect -- --no-open --port 8765 --model gpt-5.6-luna
+npm run subscription:connect -- --no-open --port 8765 --model gpt-6-luna
 ```
 
 Abre el enlace mostrado en el navegador de tu equipo y autoriza tu propia cuenta. No compartas URL, contraseñas, códigos ni archivos de tokens. El comando evalúa casos ficticios sin crear asientos financieros y guarda credenciales y reporte protegidos. No importa sesiones de Codex CLI ni de otras aplicaciones.

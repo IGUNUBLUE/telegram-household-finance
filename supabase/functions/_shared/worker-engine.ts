@@ -8,7 +8,7 @@ import {handlePro,proMarkup,formatPro} from './pro.ts';
 import {withTyping,replyRoute,typingRoute} from './experience.ts';
 import {formatResult,ledgerCsv,type Incoming} from './domain.ts';
 import {narrationContext,recoverTurnFocus} from './conversation-guide.ts';
-export type WorkerIO=Pick<typeof import('./io.ts'),'rpc'|'telegram'|'telegramDocument'|'transcribe'|'interpret'|'narrate'|'today'>&{getConfig:typeof import('./config.ts').getConfig;botUsername?:string;model?:'gpt-5.6-luna'|'space-bunny-free';onProviderUnavailable?:()=>void;canClaim:()=>Promise<boolean>;log:(record:{eventId?:number;status:string})=>void};
+export type WorkerIO=Pick<typeof import('./io.ts'),'rpc'|'telegram'|'telegramDocument'|'transcribe'|'interpret'|'narrate'|'today'>&{getConfig:typeof import('./config.ts').getConfig;botUsername?:string;model?:'gpt-6-luna'|'gpt-5.6-luna'|'space-bunny-free';onProviderUnavailable?:()=>void;canClaim:()=>Promise<boolean>;log:(record:{eventId?:number;status:string})=>void};
 export function createWorkerEngine(io:WorkerIO){
 const {rpc,telegram,telegramDocument,transcribe,interpret,narrate,today,getConfig}=io;
 async function react(messageId:unknown,emoji?:'🤔'|'👌',chatId=getConfig('TELEGRAM_GROUP_ID')){

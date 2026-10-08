@@ -17,7 +17,7 @@ Stop the worker before reconnecting the subscription, running a separate session
 
 ```sh
 sudo systemctl stop finanzas-flue-worker.service
-npm run subscription:probe -- --model gpt-5.6-luna
+npm run subscription:probe -- --model gpt-6-luna
 npm run flue:readiness -- --config "$HOME/.config/finanzas-familiares/worker.json"
 sudo systemctl start finanzas-flue-worker.service
 ```

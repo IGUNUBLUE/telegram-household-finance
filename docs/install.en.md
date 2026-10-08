@@ -101,7 +101,7 @@ Keep directory permissions `0700`, file permissions `0600` and ownership equal t
 
 ## 6. Authorize and test the inference account
 
-The adapter uses its own OAuth session. A ChatGPT subscription alone does not guarantee that this experimental client and its required model are available. The runtime currently requires `gpt-5.6-luna`; the catalog check must accept it. Stop here if authorization, catalog access or synthetic probes fail. Changing the provider requires code changes and tests, not merely editing `worker.json`.
+The adapter uses its own OAuth session. A ChatGPT subscription alone does not guarantee that this experimental client and its required model are available. The runtime currently requires `gpt-6-luna`; the catalog check must accept it. Stop here if authorization, catalog access or synthetic probes fail. Changing the provider requires code changes and tests, not merely editing `worker.json`.
 
 For a headless VPS, open this tunnel **from your workstation** and leave it running:
 
@@ -112,7 +112,7 @@ ssh -L 8765:127.0.0.1:8765 finance@YOUR_SERVER
 Then, **on the VPS as the dedicated user**, run:
 
 ```sh
-npm run subscription:connect -- --no-open --port 8765 --model gpt-5.6-luna
+npm run subscription:connect -- --no-open --port 8765 --model gpt-6-luna
 ```
 
 Open the printed authorization URL in your workstation browser. Complete the flow with your own account. Do not share that URL, passwords, callback codes or token files. The command evaluates synthetic cases without posting financial entries. It saves protected credentials and the probe report under the private configuration directory. No credentials are imported from Codex CLI or other applications.

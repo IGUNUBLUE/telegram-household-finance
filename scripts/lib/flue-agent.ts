@@ -8,7 +8,7 @@ import * as v from 'valibot';
 import {z} from 'zod';
 import type {AgentMetrics} from '../../supabase/functions/_shared/agent.ts';
 import type {FinancialTool,ToolOutcome} from '../../supabase/functions/_shared/tools/types.ts';
-import {requireCompletePiMessage} from './pi-provider.ts';
+import {requireCompletePiMessage,FINANCE_MODEL} from './pi-provider.ts';
 
 /** Preserve the existing Zod contract; Flue explicitly requires Valibot objects. */
 export function flueToolInput(input:z.ZodType):ToolInputSchema{
@@ -91,7 +91,7 @@ export async function createFinancialFlue(options:Options){
  }};
  function FinanceAgent(){
   const {key}=useInitialData<{key:string}>();
-  useModel(options.model??'openai/gpt-5.6-luna',{compaction:false});
+  useModel(options.model??'openai/'+FINANCE_MODEL,{compaction:false});
   const writeAction=useDataWriter('financial_action');
   useAgentStart(()=>{if(!active.has(key))throw Error('Financial attempt requires a fresh queue claim');});
   for(const tool of options.tools)useTool({name:tool.name,description:tool.description,input:flueToolInput(tool.inputSchema),timeoutMs:25000,annotations:{readOnlyHint:!!tool.readOnly},async run({data,signal}){

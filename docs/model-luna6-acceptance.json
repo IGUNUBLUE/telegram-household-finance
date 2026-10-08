@@ -1,0 +1,391 @@
+{
+  "model": "gpt-6-luna",
+  "prompt": "finance-harness-19",
+  "synthetic_only": true,
+  "production_ledger_used_for_model_tests": false,
+  "telegram_used_for_model_tests": false,
+  "checked_at": "2026-10-08T21:54:36.557185+00:00",
+  "local_tests": {
+    "passed": 453,
+    "failed": 0,
+    "typecheck": "passed"
+  },
+  "application_budgets": {
+    "context_window": 32000,
+    "max_output_tokens": 1800,
+    "unchanged": true
+  },
+  "initial_run": {
+    "prompt": "finance-harness-18",
+    "passed": 47,
+    "cases": 53,
+    "issues": [
+      "Batch draft RPC absent from the synthetic harness",
+      "Missing sender in transfer drafts",
+      "Author confused with recipient",
+      "Ambiguous personal relationship not clarified"
+    ]
+  },
+  "prompt19_run_before_harness_review": {
+    "passed": 52,
+    "cases": 53,
+    "remaining_failure": "Ambiguous answer asked for the relationship without stating financial facts, but the test rejected a permitted internal household read"
+  },
+  "movement_confirmation_before_harness_review": {
+    "passed": 15,
+    "cases": 16,
+    "remaining_failure": "Same internal-read assertion"
+  },
+  "harness_review": "Ambiguous requests must ask for the relationship, state no financial facts and leave the ledger unchanged. Internal shared reads are permitted. Concrete queries still assert SQL scope, person role, ordering and returned records. The acceptance case was retained; only its internal-read assertion was replaced by a no-financial-facts assertion.",
+  "accepted_suites": [
+    {
+      "suite": "framework",
+      "cases": 11,
+      "passed": 11,
+      "results": [
+        {
+          "name": "debt_clarification",
+          "passed": true,
+          "elapsed_ms": 3010,
+          "rounds": 1
+        },
+        {
+          "name": "cents",
+          "passed": true,
+          "elapsed_ms": 3233,
+          "rounds": 1
+        },
+        {
+          "name": "overview",
+          "passed": true,
+          "elapsed_ms": 5811,
+          "rounds": 2
+        },
+        {
+          "name": "resume",
+          "passed": true,
+          "elapsed_ms": 5473,
+          "rounds": 2
+        },
+        {
+          "name": "transfer_absent",
+          "passed": true,
+          "elapsed_ms": 8619,
+          "rounds": 2
+        },
+        {
+          "name": "transfer_present",
+          "passed": true,
+          "elapsed_ms": 6945,
+          "rounds": 2
+        },
+        {
+          "name": "account_balance",
+          "passed": true,
+          "elapsed_ms": 6131,
+          "rounds": 2
+        },
+        {
+          "name": "account_explain",
+          "passed": true,
+          "elapsed_ms": 8041,
+          "rounds": 2
+        },
+        {
+          "name": "account_movements",
+          "passed": true,
+          "elapsed_ms": 6678,
+          "rounds": 2
+        },
+        {
+          "name": "transfer_received",
+          "passed": true,
+          "elapsed_ms": 9078,
+          "rounds": 2
+        },
+        {
+          "name": "transfer_correction",
+          "passed": true,
+          "elapsed_ms": 7459,
+          "rounds": 2
+        }
+      ]
+    },
+    {
+      "suite": "general",
+      "cases": 16,
+      "passed": 16,
+      "results": [
+        {
+          "name": "external named customer income",
+          "passed": true,
+          "elapsed_ms": 7679,
+          "rounds": 2
+        },
+        {
+          "name": "external unnamed tenant income",
+          "passed": true,
+          "elapsed_ms": 8695,
+          "rounds": 2
+        },
+        {
+          "name": "single confirmation executes ready current draft",
+          "passed": true,
+          "elapsed_ms": 3368,
+          "rounds": 1
+        },
+        {
+          "name": "account and requested transfer complete with one proposal confirmation",
+          "passed": true,
+          "elapsed_ms": 13578,
+          "rounds": 3
+        },
+        {
+          "name": "new expense keeps unrelated pending salary in context without resuming it",
+          "passed": true,
+          "elapsed_ms": 6416,
+          "rounds": 2
+        },
+        {
+          "name": "ambiguous affirmation neither chooses an alternative nor registers",
+          "passed": true,
+          "elapsed_ms": 2916,
+          "rounds": 1
+        },
+        {
+          "name": "explicit save-only request stays unregistered",
+          "passed": true,
+          "elapsed_ms": 6471,
+          "rounds": 2
+        },
+        {
+          "name": "narrator ignores unrelated salary and asks only the active missing scope",
+          "passed": true,
+          "elapsed_ms": 2448,
+          "rounds": null
+        },
+        {
+          "name": "received from registered foreign account is an awaiting internal transfer",
+          "passed": true,
+          "elapsed_ms": 11784,
+          "rounds": 3
+        },
+        {
+          "name": "external bank with similar name remains income",
+          "passed": true,
+          "elapsed_ms": 7381,
+          "rounds": 2
+        },
+        {
+          "name": "cross-owner transfer preserves origin and destination",
+          "passed": true,
+          "elapsed_ms": 6674,
+          "rounds": 2
+        },
+        {
+          "name": "family expense does not authorize foreign account",
+          "passed": true,
+          "elapsed_ms": 7393,
+          "rounds": 2
+        },
+        {
+          "name": "own pocket transfer records immediately",
+          "passed": true,
+          "elapsed_ms": 7022,
+          "rounds": 2
+        },
+        {
+          "name": "short family answer separates independent own and foreign movements",
+          "passed": true,
+          "elapsed_ms": 7647,
+          "rounds": 2
+        },
+        {
+          "name": "linked account plus foreign transfer waits before creating anything",
+          "passed": true,
+          "elapsed_ms": 10600,
+          "rounds": 3
+        },
+        {
+          "name": "updated pending amount invalidates old owner approval",
+          "passed": true,
+          "elapsed_ms": 6411,
+          "rounds": 2
+        }
+      ]
+    },
+    {
+      "suite": "accounts",
+      "cases": 10,
+      "passed": 10,
+      "results": [
+        {
+          "name": "original own wording",
+          "passed": true,
+          "elapsed_ms": 5881,
+          "rounds": 2
+        },
+        {
+          "name": "own money paraphrase",
+          "passed": true,
+          "elapsed_ms": 6134,
+          "rounds": 2
+        },
+        {
+          "name": "other member own overview",
+          "passed": true,
+          "elapsed_ms": 6509,
+          "rounds": 2
+        },
+        {
+          "name": "explicit all accounts",
+          "passed": true,
+          "elapsed_ms": 6861,
+          "rounds": 2
+        },
+        {
+          "name": "explicit global",
+          "passed": true,
+          "elapsed_ms": 7398,
+          "rounds": 2
+        },
+        {
+          "name": "own after global",
+          "passed": true,
+          "elapsed_ms": 5272,
+          "rounds": 2
+        },
+        {
+          "name": "global after own",
+          "passed": true,
+          "elapsed_ms": 8096,
+          "rounds": 2
+        },
+        {
+          "name": "own historical date",
+          "passed": true,
+          "elapsed_ms": 6441,
+          "rounds": 2
+        },
+        {
+          "name": "explicit between both",
+          "passed": true,
+          "elapsed_ms": 6938,
+          "rounds": 2
+        },
+        {
+          "name": "specific account stays specific",
+          "passed": true,
+          "elapsed_ms": 6798,
+          "rounds": 2
+        }
+      ]
+    },
+    {
+      "suite": "movements",
+      "cases": 16,
+      "passed": 16,
+      "results": [
+        {
+          "name": "own latest registered original wording",
+          "passed": true,
+          "elapsed_ms": 6192,
+          "rounds": 2
+        },
+        {
+          "name": "own latest recorded paraphrase",
+          "passed": true,
+          "elapsed_ms": 8786,
+          "rounds": 2
+        },
+        {
+          "name": "own received income differs from author",
+          "passed": true,
+          "elapsed_ms": 6593,
+          "rounds": 2
+        },
+        {
+          "name": "own paid expense differs from author",
+          "passed": true,
+          "elapsed_ms": 6231,
+          "rounds": 2
+        },
+        {
+          "name": "no own authored expense avoids household fallback",
+          "passed": true,
+          "elapsed_ms": 8302,
+          "rounds": 2
+        },
+        {
+          "name": "own managed account movements differ from recipient",
+          "passed": true,
+          "elapsed_ms": 6403,
+          "rounds": 2
+        },
+        {
+          "name": "named other member author",
+          "passed": true,
+          "elapsed_ms": 6261,
+          "rounds": 2
+        },
+        {
+          "name": "named other member recipient",
+          "passed": true,
+          "elapsed_ms": 7101,
+          "rounds": 2
+        },
+        {
+          "name": "explicit global financial date",
+          "passed": true,
+          "elapsed_ms": 5948,
+          "rounds": 2
+        },
+        {
+          "name": "explicit global last registration",
+          "passed": true,
+          "elapsed_ms": 6879,
+          "rounds": 2
+        },
+        {
+          "name": "global to own context",
+          "passed": true,
+          "elapsed_ms": 6433,
+          "rounds": 2
+        },
+        {
+          "name": "own to global context",
+          "passed": true,
+          "elapsed_ms": 6571,
+          "rounds": 2
+        },
+        {
+          "name": "named member correction keeps author relation",
+          "passed": true,
+          "elapsed_ms": 7123,
+          "rounds": 2
+        },
+        {
+          "name": "own income total over a period",
+          "passed": true,
+          "elapsed_ms": 11410,
+          "rounds": 2
+        },
+        {
+          "name": "own historical list includes family records",
+          "passed": true,
+          "elapsed_ms": 7214,
+          "rounds": 2
+        },
+        {
+          "name": "ambiguous own movements asks relationship",
+          "passed": true,
+          "elapsed_ms": 4950,
+          "rounds": 2
+        }
+      ]
+    }
+  ],
+  "cases": 53,
+  "passed": 53,
+  "timing_note": "Synthetic fixture and model timings are not end-to-end Telegram delivery latency."
+}

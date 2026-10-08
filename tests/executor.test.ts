@@ -20,8 +20,8 @@ test('private selector and actual model trace are backend-only and bounded',asyn
   await f.db.exec("insert into vault.decrypted_secrets values('FINANCE_EXECUTOR','vps_subscription'),('UNLISTED_KEY','fictional')");
   const cfg=(await f.db.query<any>('select public.finance_runtime_config() r')).rows[0].r;assert.equal(cfg.FINANCE_EXECUTOR,'vps_subscription');assert.equal(cfg.UNLISTED_KEY,undefined);
   const ev=await f.ingest({text:'consulta ficticia'});
-  await f.db.query("select public.finance_worker_trace('trace',$1::jsonb)",[JSON.stringify({id:ev.id,model:'gpt-5.6-luna',rounds:1,tools:[{name:'consultar_cuenta',status:'ok',secret:'fictional-private'}],private:'fictional-private'})]);
-  const trace=(await f.db.query<any>('select model,metrics from private.agent_traces')).rows[0];assert.equal(trace.model,'gpt-5.6-luna');assert.doesNotMatch(JSON.stringify(trace.metrics),/fictional-private/);
+  await f.db.query("select public.finance_worker_trace('trace',$1::jsonb)",[JSON.stringify({id:ev.id,model:'gpt-6-luna',rounds:1,tools:[{name:'consultar_cuenta',status:'ok',secret:'fictional-private'}],private:'fictional-private'})]);
+  const trace=(await f.db.query<any>('select model,metrics from private.agent_traces')).rows[0];assert.equal(trace.model,'gpt-6-luna');assert.doesNotMatch(JSON.stringify(trace.metrics),/fictional-private/);
   for(const role of ['anon','authenticated']){await f.db.exec('set role '+role);try{await assert.rejects(f.db.query("select public.finance_worker_trace('trace','{}')"));await assert.rejects(f.db.query('select public.finance_runtime_config()'));}finally{await f.db.exec('reset role');}}
  }finally{await f.db.close();}
 });

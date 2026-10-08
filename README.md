@@ -39,6 +39,7 @@ Copy the [agent setup prompt](docs/agent-setup.en.md) into an agent with termina
 | Development, tests and release checklist | [Development](docs/development.en.md) | [Desarrollo](docs/development.es.md) |
 | Initial snapshot verification | [Checks](docs/release-check.en.md) | [Verificación](docs/release-check.es.md) |
 | Person-scoped movement verification | [Checks](docs/movement-person-scope-check.en.md) | [Verificación](docs/movement-person-scope-check.es.md) |
+| Luna 6 model verification | [Checks](docs/model-luna6-check.en.md) | [Verificación](docs/model-luna6-check.es.md) |
 
 All identities, account labels and financial data used in conversation examples and tests are fictional. No runtime database, conversation archive, credential file or previous private Git history is included.
 

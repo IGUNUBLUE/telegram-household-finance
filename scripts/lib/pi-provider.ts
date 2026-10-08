@@ -7,7 +7,7 @@ import type {SubscriptionCredentials} from './subscription-auth.ts';
 import type {SubscriptionSession} from './subscription-session.ts';
 import {selectSubscriptionModel} from './subscription-catalog.ts';
 
-export const FINANCE_MODEL='gpt-5.6-luna';
+export const FINANCE_MODEL='gpt-6-luna';
 export function toPiCredential(c:SubscriptionCredentials){
  return {type:'oauth' as const,access:c.access_token,refresh:c.refresh_token,expires:c.expires_at,clientId:c.client_id,scopes:[...c.scopes]};
 }

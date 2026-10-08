@@ -5,7 +5,7 @@ import {mkdir} from 'node:fs/promises';
 import {setTimeout as sleep} from 'node:timers/promises';
 import {loadWorkerConfig} from './lib/worker-config.ts';
 import {openSubscriptionSession,type SubscriptionSession} from './lib/subscription-session.ts';
-import {createPiRefresh,createProtectedPiProvider} from './lib/pi-provider.ts';
+import {createPiRefresh,createProtectedPiProvider,FINANCE_MODEL} from './lib/pi-provider.ts';
 import {createFinancialFlue} from './lib/flue-agent.ts';
 import {createFlueInterpretationServices} from './lib/flue-interpretation.ts';
 import {createSecureFlueSqlite,flueStatePath} from './lib/flue-sqlite.ts';
@@ -50,9 +50,9 @@ try{
  const waitUntil=(task:Promise<unknown>)=>{const safe=task.catch(()=>{log({status:'telegram_presence_unavailable'});});background.add(safe);void safe.finally(()=>background.delete(safe));};
  const intake=createTelegramIntake({loadConfig:loadOwnedConfig,getConfig,getClient:()=>client,rpc:io.rpc,waitUntil,wakeWorker:async()=>{wake.abort();},log:()=>log({status:'telegram_intake_unavailable'})});
  let failed=false,lastDue=-Infinity;
- const engine=(await import('../supabase/functions/_shared/worker-engine.ts')).createWorkerEngine({...io,...services,getConfig,botUsername:bot.username,model:'gpt-5.6-luna',onProviderUnavailable:()=>{failed=true;},canClaim:async()=>!failed&&!stop.signal.aborted&&executorMode(getConfig('FINANCE_EXECUTOR'))==='vps_subscription',log:record=>{if(record.status==='event_failed')failed=true;log(record);}});
+ const engine=(await import('../supabase/functions/_shared/worker-engine.ts')).createWorkerEngine({...io,...services,getConfig,botUsername:bot.username,model:FINANCE_MODEL,onProviderUnavailable:()=>{failed=true;},canClaim:async()=>!failed&&!stop.signal.aborted&&executorMode(getConfig('FINANCE_EXECUTOR'))==='vps_subscription',log:record=>{if(record.status==='event_failed')failed=true;log(record);}});
  const allowed=()=>!stop.signal.aborted&&executorMode(getConfig('FINANCE_EXECUTOR'))==='vps_subscription';
- console.log(JSON.stringify({status:'flue_worker_ready',embedding_model:LOCAL_EMBEDDING_ID}));
+ console.log(JSON.stringify({status:'flue_worker_ready',model:FINANCE_MODEL,embedding_model:LOCAL_EMBEDDING_ID}));
  await waitForApprovalActivation(io.rpc,()=>sleep(2000,undefined,{signal:stop.signal}),stop.signal);
  await runWorkerServices([
   ()=>runTelegramPolling({...polling,admit:async update=>{await loadOwnedConfig();if(!allowed())throw Error('Intake owner unavailable');return intake(update);},sleep:async(ms,signal)=>{await sleep(ms,undefined,{signal});},log:status=>log({status})},stop.signal),
